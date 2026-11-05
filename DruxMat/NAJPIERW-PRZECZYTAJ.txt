@@ -1,0 +1,6 @@
+DRUXMAT PREMIUM — PACZKA DO RAILWAY
+
+Nie zawiera lokalnej bazy ani hasla administratora.
+Wgraj pliki projektu do prywatnego repozytorium GitHub i podepnij go w Railway.
+Ustaw zmienne, Volume /data i domenę wg START-RAILWAY.md.
+Panel: https://TWOJ-ADRES/admin/logowanie

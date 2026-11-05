@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<main id="main">
+<section class="hero" id="start"><div class="hero-grid-bg" aria-hidden="true"></div><div class="shell hero-layout">
+  <div class="hero-copy reveal"><div class="eyebrow"><span class="eyebrow-line"></span> TWOJA WIZJA. NASZA TECHNOLOGIA. <span class="eyebrow-square"></span></div>
+    <h1>Pomysł to<br> <span>początek.</span><br><em>Reszta to DruxMat.</em></h1>
+    <p>Precyzyjny druk 3D, prototypowanie i projektowanie. Zamieniamy koncepcje w realne części — od jednej sztuki po krótką serię.</p>
+    <div class="hero-actions"><a class="btn" href="{{ url_for('new_order') if me and me.role=='user' else url_for('register') }}">Rozpocznij projekt <span>↗</span></a><a class="btn btn-ghost" href="#uslugi">Poznaj ofertę <span>↓</span></a></div>
+    <div class="hero-proof"><div class="proof-icon">✦</div><div><b>Projekt dopasowany do Ciebie</b><span>Bezpośredni kontakt • indywidualna wycena</span></div></div>
+  </div>
+  <div class="hero-showcase reveal" aria-label="Ilustracja technologiczna przestrzennego elementu 3D">
+    <div class="showcase-glow"></div><div class="showcase-orbit orbit-one"></div><div class="showcase-orbit orbit-two"></div>
+    <div class="showcase-title"><span class="tiny-orange">●</span> DRUXMAT / DIGITAL FABRICATION <span>NO. 001</span></div>
+    <svg class="showcase-object" viewBox="0 0 540 560" role="img" aria-label="Warstwowy model elementu wydrukowanego w technologii 3D" fill="none">
+      <defs><linearGradient id="topA" x1="75" y1="70" x2="436" y2="380"><stop stop-color="#ffc29b"/><stop offset=".45" stop-color="#fa894d"/><stop offset="1" stop-color="#944026"/></linearGradient><linearGradient id="sideA" x1="105" y1="190" x2="450" y2="491"><stop stop-color="#2d343c"/><stop offset="1" stop-color="#0c1015"/></linearGradient><linearGradient id="sideB" x1="330" y1="195" x2="160" y2="495"><stop stop-color="#f07d43"/><stop offset="1" stop-color="#613321"/></linearGradient></defs>
+      <ellipse cx="270" cy="478" rx="176" ry="31" fill="#f47741" opacity=".11"/>
+      <path d="M269 70 438 165v213L269 475 100 378V165L269 70Z" fill="url(#sideA)" stroke="#f89960" stroke-width="2.5"/>
+      <path d="M269 70 438 165 269 262 100 165 269 70Z" fill="#33383b" stroke="url(#topA)" stroke-width="4"/>
+      <path d="M100 165 269 262V475L100 378V165Z" fill="#1e242a" stroke="#e26d3b" stroke-width="2"/>
+      <path d="M269 262 438 165V378L269 475V262Z" fill="url(#sideB)" fill-opacity=".48" stroke="#d06b42" stroke-width="2"/>
+      <path d="m269 101 115 64-115 66-115-66 115-64Z" fill="#12191e" stroke="#ff995e" stroke-width="10"/>
+      <path d="m269 127 72 39-72 41-72-41 72-39Z" fill="#303940" stroke="#ffbd93" stroke-width="3"/>
+      <path d="m100 207 169 97 169-97M100 243l169 97 169-97M100 279l169 97 169-97M100 315l169 97 169-97M100 351l169 97 169-97" stroke="#f48b55" stroke-width="2.2" stroke-opacity=".85"/>
+      <path d="M269 262v213M100 165l169 97 169-97" stroke="#ffc09a" stroke-opacity=".7" stroke-width="2"/>
+      <path d="M269 26v46M257 40h24M257 59h24M64 165h32M448 165h28M269 486v36" stroke="#ff945a" stroke-width="1.5"/>
+      <path d="M84 400h-42M456 400h42M62 106l38 23M438 129l38-23" stroke="#6f7b83" stroke-width="1" stroke-dasharray="3 5"/>
+      <circle cx="269" cy="70" r="5" fill="#ffa46d"/><circle cx="269" cy="475" r="5" fill="#ffa46d"/>
+      <text x="17" y="105" fill="#8d9ca7" font-size="12" font-family="monospace" letter-spacing="2">LAYER / 001</text><text x="388" y="511" fill="#f39d70" font-size="12" font-family="monospace">3D / DM</text>
+    </svg>
+    <div class="showcase-chip floating-chip"><span class="chip-led"></span> WYKONANIE Z DETALAMI</div>
+    <div class="showcase-bottom"><span>PRECISION / FORM / FUNCTION</span><span class="arrow-corner">⌁</span></div>
+  </div>
+</div><div class="shell hero-lower"><span>01 / TECHNOLOGIA, KTÓRA DAJE MOŻLIWOŚCI</span><a href="#uslugi">PRZEWIŃ, ABY ODKRYĆ WIĘCEJ <span>↓</span></a></div></section>
+
+<div class="marquee" aria-label="Specjalizacje DruxMat"><div class="shell marquee-row"><span>DRUK 3D</span><i>✳</i><span>PROTOTYPOWANIE</span><i>✳</i><span>PROJEKTOWANIE 3D</span><i>✳</i><span>MAŁE SERIE</span><i>✳</i><span>REALIZACJA POMYSŁÓW</span></div></div>
+
+<section class="section services-section" id="uslugi"><div class="shell"><div class="section-heading reveal"><div><div class="section-eyebrow"><span>01</span> / OBSZARY DZIAŁANIA</div><h2>Wszystko, czego<br>potrzebuje <em>Twój projekt.</em></h2></div><p>Od prostego elementu po funkcjonalną część. Wybierz kategorię i zobacz, jak możemy Ci pomóc.</p></div>
+  <div class="category-toolbar" role="group" aria-label="Filtruj kategorie usług"><button class="category-chip active" type="button" data-filter="all" aria-pressed="true">Wszystkie <span>05</span></button><button class="category-chip" type="button" data-filter="druk" aria-pressed="false">Druk 3D</button><button class="category-chip" type="button" data-filter="prototyp" aria-pressed="false">Prototypy</button><button class="category-chip" type="button" data-filter="serie" aria-pressed="false">Małe serie</button><button class="category-chip" type="button" data-filter="projekt" aria-pressed="false">Projektowanie</button><button class="category-chip" type="button" data-filter="pomoc" aria-pressed="false">Doradztwo</button></div>
+  <div class="service-grid">
+    {% set service_items = [
+      ('druk','01','⬡','Druk 3D na zamówienie','Wydruki z gotowych modeli, elementy użytkowe i części dopasowane do konkretnego zastosowania.'),
+      ('prototyp','02','◇','Prototypowanie','Sprawdź kształt, wymiary i dopasowanie w praktyce, zanim przejdziesz do kolejnego etapu.'),
+      ('serie','03','▦','Małe serie produkcyjne','Powtarzalne wydruki w małych nakładach, kiedy jeden egzemplarz to zdecydowanie za mało.'),
+      ('projekt','04','⌘','Projektowanie modeli 3D','Przygotowanie modeli na bazie szkicu, wymiarów lub opisu. Wspólnie ustalimy zakres.'),
+      ('pomoc','05','◎','Pomoc w realizacji projektu','Doradzimy, od czego zacząć, jak dobrać materiał i jak przygotować projekt do wydruku.')
+    ] %}
+    {% for category,no,icon,name,desc in service_items %}<a class="service-card reveal" data-service-category="{{ category }}" href="{{ url_for('new_order',service=name) if me and me.role=='user' else url_for('register') }}"><div class="service-card-header"><span class="service-symbol">{{ icon }}</span><span class="service-num">{{ no }} / 05</span></div><div class="service-card-body"><h3>{{ name }}</h3><p>{{ desc }}</p></div><div class="service-card-bottom">Zapytaj o wycenę <span>↗</span></div></a>{% endfor %}
+  </div>
+</div></section>
+
+<section class="section material-section" id="materialy"><div class="shell material-layout"><div class="material-intro reveal"><div class="section-eyebrow"><span>02</span> / MATERIAŁY</div><h2>Dobry materiał.<br><em>Właściwy efekt.</em></h2><p>Nie musisz znać wszystkich parametrów technicznych. Opowiedz, do czego ma służyć element, a wspólnie wybierzemy rozwiązanie.</p><a class="text-link" href="{{ url_for('new_order') if me and me.role=='user' else url_for('register') }}">Zapytaj o dobór materiału <span>↗</span></a></div><div class="material-items reveal">
+  <div class="material-item"><div class="material-dot pla"></div><div><h3>PLA</h3><p>Modele koncepcyjne i elementy dekoracyjne</p></div><span>01</span></div>
+  <div class="material-item"><div class="material-dot petg"></div><div><h3>PETG</h3><p>Uniwersalne elementy użytkowe</p></div><span>02</span></div>
+  <div class="material-item"><div class="material-dot asa"></div><div><h3>ASA / ABS</h3><p>Materiały do zastosowań wymagających omówienia</p></div><span>03</span></div>
+  <div class="material-item"><div class="material-dot tpu"></div><div><h3>TPU</h3><p>Elastyczne części i elementy dopasowujące się</p></div><span>04</span></div>
+</div></div></section>
+
+<section class="section process-section" id="proces"><div class="shell"><div class="section-heading reveal"><div><div class="section-eyebrow"><span>03</span> / PROCES WSPÓŁPRACY</div><h2>Od pierwszego szkicu<br>do <em>gotowej części.</em></h2></div><p>Przejrzysty proces. Wiesz, co się dzieje z projektem, a status sprawdzasz po zalogowaniu.</p></div><div class="timeline">
+  {% for number,title,desc in [('01','Kontakt','Opisujesz, czego potrzebujesz, i przesyłasz zdjęcie lub model.'),('02','Analiza','Sprawdzamy zastosowanie, wymiary i możliwości.'),('03','Wycena','Ustalamy zakres, koszt oraz orientacyjny termin.'),('04','Realizacja','Po uzgodnieniu warunków wykonujemy elementy.'),('05','Odbiór','Uzgadniamy odbiór gotowego zamówienia lub wysyłkę.')] %}<div class="timeline-step reveal"><div class="timeline-marker"></div><span class="timeline-number">{{ number }} / 05</span><h3>{{ title }}</h3><p>{{ desc }}</p></div>{% endfor %}
+</div></div></section>
+
+<section class="section portfolio-section" id="portfolio"><div class="shell"><div class="section-heading reveal"><div><div class="section-eyebrow"><span>04</span> / PORTFOLIO</div><h2>Forma spotyka<br><em>funkcjonalność.</em></h2></div><p>Galeria jest przygotowana na prawdziwe zdjęcia wykonanych projektów DruxMat. Nie pokazujemy fikcyjnych realizacji.</p></div><div class="portfolio-grid"><div class="portfolio-main reveal"><div class="portfolio-wire" aria-hidden="true"><svg viewBox="0 0 260 240" fill="none"><path d="M130 15 236 75v89l-106 60L24 164V75L130 15Z" stroke="currentColor"/><path d="m24 75 106 60 106-60M130 135v89M24 100l106 60 106-60M24 125l106 60 106-60" stroke="currentColor"/><path d="m130 49 76 43-76 43-76-43 76-43Z" stroke="currentColor"/></svg></div><span class="portfolio-tag">MIEJSCE NA TWOJE REALIZACJE</span><div class="portfolio-caption"><h3>Prawdziwe projekty.<br>Bez przypadkowych zdjęć.</h3><p>Zdjęcia wykonanych wydruków będą mogły zostać dodane tutaj.</p></div></div><div class="portfolio-aside reveal"><span class="micro-label">DRUXMAT / GALERIA</span><div class="portfolio-aside-symbol">↗</div><h3>Masz projekt,<br>który chcesz zrealizować?</h3><p>Prześlij opis, zdjęcia lub model. Wrócimy do Ciebie z informacją o możliwościach wykonania.</p><a class="btn" href="{{ url_for('new_order') if me and me.role=='user' else url_for('register') }}">Prześlij projekt <span>↗</span></a></div></div></div></section>
+
+<section class="section faq-section" id="faq"><div class="shell faq-layout"><div class="reveal"><div class="section-eyebrow"><span>05</span> / NAJCZĘSTSZE PYTANIA</div><h2>Warto <em>wiedzieć.</em></h2><p>Nie znalazłeś odpowiedzi? Napisz do nas, a doprecyzujemy szczegóły.</p><a class="text-link" href="mailto:{{ contact_email }}">{{ contact_email }} ↗</a></div><div class="faq-items reveal">
+  <details><summary>Czy mogę zamówić druk bez gotowego modelu 3D?<span>+</span></summary><p>Tak. Prześlij opis, szkic lub zdjęcie. Sprawdzimy, czy możemy przygotować model i wycenimy zakres prac.</p></details>
+  <details><summary>Jak przesłać zdjęcie lub plik do wyceny?<span>+</span></summary><p>Załóż konto, przejdź do nowego zamówienia i dodaj załączniki. Obsługiwane są m.in. JPG, PNG, STL, 3MF i PDF.</p></details>
+  <details><summary>Ile kosztuje wydruk 3D?<span>+</span></summary><p>Cena zależy od geometrii, rozmiaru, materiału, liczby sztuk i wymagań. Przygotowujemy indywidualną wycenę.</p></details>
+  <details><summary>Gdzie sprawdzę status mojego zamówienia?<span>+</span></summary><p>Po zalogowaniu do panelu klienta zobaczysz historię zgłoszeń, statusy i wiadomości od DruxMat.</p></details>
+</div></div></section>
+
+<section class="section contact-section" id="kontakt"><div class="shell"><div class="contact-panel reveal"><div><div class="section-eyebrow"><span>06</span> / KONTAKT</div><h2>Masz pomysł?<br><em>Zróbmy go razem.</em></h2><p>Wystarczy kilka informacji, żeby zacząć. Opowiedz nam, czego potrzebujesz.</p><div class="contact-buttons"><a class="btn" href="{{ url_for('new_order') if me and me.role=='user' else url_for('register') }}">Złóż zapytanie online <span>↗</span></a><a class="btn btn-ghost" href="mailto:{{ contact_email }}">Napisz e-mail <span>↗</span></a></div></div><div class="contact-side"><div class="contact-side-top">DRUXMAT / KONTAKT <span>✳</span></div><a href="mailto:{{ contact_email }}">{{ contact_email }} <span>↗</span></a><a href="tel:+48577636936">{{ phone_label }} <span>↗</span></a><p>WOJEWÓDZTWO ŁÓDZKIE<br>WYSYŁKA DO UZGODNIENIA</p></div></div></div></section>
+</main>
+{% endblock %}

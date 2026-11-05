@@ -1,0 +1,23 @@
+services:
+  web:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY in .env}
+      COOKIE_SECURE: ${COOKIE_SECURE:-1}
+      DRUXMAT_DATA_DIR: /data
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+      DRUXMAT_ADMIN_EMAIL: ${DRUXMAT_ADMIN_EMAIL:-druxmat@gmail.com}
+      DRUXMAT_ADMIN_LOGIN: ${DRUXMAT_ADMIN_LOGIN:-DruxMatAdmin}
+      DRUXMAT_ADMIN_INITIAL_PASSWORD: ${DRUXMAT_ADMIN_INITIAL_PASSWORD:-}
+    volumes:
+      - druxmat_data:/data
+    restart: unless-stopped
+volumes:
+  druxmat_data:

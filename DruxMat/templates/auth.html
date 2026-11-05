@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<main id="main" class="inner-page"><div class="shell auth-layout">
+  <div class="auth-intro reveal"><span class="section-eyebrow"><span>STREFA KLIENTA</span> / DRUXMAT ID</span><h1>{{ 'Zrealizujmy' if register else 'Dobrze Cię' }}<br><em>{{ 'Twój pomysł.' if register else 'znów widzieć.' }}</em></h1><p>{{ 'Utwórz konto, prześlij zdjęcia lub modele 3D i sprawdzaj status swojego zamówienia bez szukania wiadomości.' if register else 'Zaloguj się do swojej przestrzeni projektowej. Twoje zamówienia, załączniki i postęp prac są w jednym miejscu.' }}</p>
+    <div class="auth-perks"><div><span>01</span> Bezpieczny panel klienta</div><div><span>02</span> Zdjęcia i pliki projektowe</div><div><span>03</span> Status realizacji online</div></div><div class="auth-art" aria-hidden="true">◈ <span>MADE TO MATERIALIZE</span></div>
+  </div>
+  <div class="auth-card reveal"><span class="micro-label">DRUXMAT / {{ 'REJESTRACJA' if register else 'LOGOWANIE' }}</span><h2>{{ 'Załóż konto' if register else 'Zaloguj się' }}</h2><p class="intro-sub">{{ 'Masz już konto?' if register else 'Nie masz jeszcze konta?' }} <a href="{{ url_for('login') if register else url_for('register') }}">{{ 'Przejdź do logowania' if register else 'Utwórz konto' }} ↗</a></p>
+    <form method="post" class="form-stack"><input type="hidden" name="csrf" value="{{csrf()}}">
+      {% if register %}<label for="auth-name">Imię i nazwisko</label><input id="auth-name" name="name" type="text" required minlength="2" maxlength="100" autocomplete="name" placeholder="Jak mamy się do Ciebie zwracać?" value="{{request.form.get('name','')}}">{% endif %}
+      <label for="auth-email">Adres e-mail</label><input id="auth-email" name="email" type="email" required maxlength="200" autocomplete="email" placeholder="twoj@email.pl" value="{{request.form.get('email','')}}">
+      <label for="auth-password">Hasło</label><div class="password-field"><input id="auth-password" type="password" name="password" required {% if register %}minlength="10" maxlength="256" autocomplete="new-password"{% else %}autocomplete="current-password"{% endif %} placeholder="{{ 'Minimum 10 znaków' if register else 'Wpisz swoje hasło' }}"><button type="button" class="pass-toggle" aria-label="Pokaż hasło" aria-pressed="false">Pokaż</button></div>
+      <button class="btn btn-wide" type="submit">{{ 'Utwórz konto' if register else 'Zaloguj się' }} <span>↗</span></button>
+    </form>{% if not register %}<p class="intro-sub forgot-link"><a href="{{url_for('forgot_password')}}">Nie pamiętasz hasła? Odzyskaj dostęp ↗</a></p>{% endif %}<div class="auth-safe">⌁ <span>Konto i zamówienia są dostępne tylko dla Ciebie oraz administratora.</span></div>
+  </div>
+</div></main>
+{% endblock %}
